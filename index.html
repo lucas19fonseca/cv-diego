@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <title>Diego Soares</title>
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -17,8 +21,8 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
-        
-        body { 
+
+        body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
@@ -35,6 +39,7 @@
         .card-hover {
             transition: all 0.3s ease;
         }
+
         .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -42,8 +47,15 @@
 
         /* Icon pulse animation */
         @keyframes pulse-icon {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         .icon-pulse:hover {
@@ -59,13 +71,16 @@
         ::-webkit-scrollbar {
             width: 10px;
         }
+
         ::-webkit-scrollbar-track {
             background: #f1f5f9;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 5px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
@@ -113,6 +128,7 @@
             transform: rotate(45deg) translate(-5px, -6px);
         }
 
+        /* Improved responsive styles */
         @media (max-width: 768px) {
             .hamburger {
                 display: block;
@@ -121,6 +137,81 @@
             .desktop-menu {
                 display: none;
             }
+
+            /* Improved header spacing for mobile */
+            header {
+                padding-top: 6rem;
+                padding-bottom: 4rem;
+            }
+
+            /* Better spacing for name */
+            h1 {
+                font-size: 3.5rem !important;
+                line-height: 1.1;
+                margin-bottom: 1.5rem !important;
+            }
+
+            /* Better button layout for mobile */
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem !important;
+            }
+
+            .header-buttons a {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
+
+            /* Improved section spacing */
+            section {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+            }
+
+            /* Better card spacing */
+            .card-grid {
+                gap: 1.5rem !important;
+            }
+
+            /* Better contact layout */
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Improved text sizing */
+            .text-responsive {
+                font-size: 1.125rem !important;
+                line-height: 1.6;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.75rem !important;
+            }
+
+            .text-responsive {
+                font-size: 1rem !important;
+            }
+
+            .section-title {
+                font-size: 2.5rem !important;
+            }
+
+            /* Better padding for small screens */
+            .container-padding {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
+
+        /* Improved desktop menu spacing */
+        .desktop-menu a {
+            margin-left: 2rem;
         }
     </style>
 </head>
@@ -132,19 +223,19 @@
         <div class="max-w-5xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="#" class="text-xl font-medium text-gray-900">Diego Soares</a>
-                
+
                 <!-- Desktop Menu -->
                 <div class="desktop-menu flex hidden md:block">
-                    <a href="#about" class="text-gray-600 hover:text-sky-600 transition-colors duration-300 gap-9">
+                    <a href="#about" class="text-gray-600 hover:text-sky-600 transition-colors duration-300">
                         <i class="fas fa-user mr-2"></i>About
                     </a>
-                    <a href="#career" class="text-gray-600 hover:text-sky-600 transition-colors duration-300 gap-9">
+                    <a href="#career" class="text-gray-600 hover:text-sky-600 transition-colors duration-300">
                         <i class="fas fa-briefcase mr-2"></i>Career
                     </a>
-                    <a href="#results" class="text-gray-600 hover:text-sky-600 transition-colors duration-300 gap-9">
+                    <a href="#results" class="text-gray-600 hover:text-sky-600 transition-colors duration-300">
                         <i class="fas fa-chart-line mr-2"></i>Results
                     </a>
-                    <a href="#contact" class="text-gray-600 hover:text-sky-600 transition-colors duration-300 gap-9">
+                    <a href="#contact" class="text-gray-600 hover:text-sky-600 transition-colors duration-300">
                         <i class="fas fa-envelope mr-2"></i>Contact
                     </a>
                 </div>
@@ -179,11 +270,11 @@
 
     <!-- HEADER -->
     <header class="bg-white border-b border-gray-200 pt-24 md:pt-32">
-        <div class="max-w-5xl mx-auto px-6 py-24 text-center opacity-0" id="header">
+        <div class="max-w-5xl mx-auto px-6 py-16 md:py-24 text-center opacity-0 container-padding" id="header">
 
             <!-- Icon badge -->
-            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-sky-100 mb-6">
-                <i class="fas fa-code text-3xl text-sky-600"></i>
+            <div class="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-100 mb-6">
+                <i class="fas fa-code text-2xl md:text-3xl text-sky-600"></i>
             </div>
 
             <!-- Profession Top -->
@@ -193,24 +284,26 @@
             </p>
 
             <!-- Name -->
-            <h1 class="text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight">
+            <h1 class="text-5xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight section-title">
                 Diego Soares
             </h1>
 
             <!-- Subtitle with icons -->
-            <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-8">
-                Focused on <span class="font-medium text-sky-600">optimization</span>, 
-                <span class="font-medium text-sky-600">scalable architecture</span>, and 
-                <span class="font-medium text-sky-600">high-performance solutions</span> 
+            <p class="text-lg md:text-2xl text-gray-600 max-w-2xl mx-auto mb-8 text-responsive">
+                Focused on <span class="font-medium text-sky-600">optimization</span>,
+                <span class="font-medium text-sky-600">scalable architecture</span>, and
+                <span class="font-medium text-sky-600">high-performance solutions</span>
                 for industrial automation
             </p>
 
             <!-- Quick links -->
-            <div class="flex gap-4 justify-center mt-12">
-                <a href="#contact" class="px-8 py-3 bg-sky-600 text-white rounded-full hover:bg-sky-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <div class="flex gap-4 justify-center mt-12 header-buttons">
+                <a href="#contact"
+                    class="px-6 py-3 md:px-8 md:py-3 bg-sky-600 text-white rounded-full hover:bg-sky-700 transition-all duration-300 shadow-lg hover:shadow-xl">
                     <i class="fas fa-paper-plane mr-2"></i>Get in Touch
                 </a>
-                <a href="#results" class="px-8 py-3 bg-white text-gray-800 rounded-full border border-gray-300 hover:border-sky-600 hover:text-sky-600 transition-all duration-300">
+                <a href="#results"
+                    class="px-6 py-3 md:px-8 md:py-3 bg-white text-gray-800 rounded-full border border-gray-300 hover:border-sky-600 hover:text-sky-600 transition-all duration-300">
                     <i class="fas fa-eye mr-2"></i>View Work
                 </a>
             </div>
@@ -219,16 +312,16 @@
     </header>
 
     <!-- MAIN -->
-    <main class="max-w-5xl mx-auto px-6">
+    <main class="max-w-5xl mx-auto px-6 container-padding">
 
         <!-- ABOUT -->
-        <section id="about" class="py-24 opacity-0">
+        <section id="about" class="py-16 md:py-24 opacity-0">
             <div class="flex items-center gap-4 mb-12">
                 <i class="fas fa-user text-3xl text-sky-600"></i>
-                <h2 class="text-4xl font-light">About</h2>
+                <h2 class="text-3xl md:text-4xl font-light section-title">About</h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-12 card-grid">
                 <!-- Info cards -->
                 <div class="p-6 rounded-2xl bg-white shadow-md border border-gray-100 card-hover">
                     <i class="fas fa-map-marker-alt text-2xl text-sky-600 mb-4"></i>
@@ -253,19 +346,22 @@
                 <p class="flex gap-4">
                     <i class="fas fa-graduation-cap text-sky-600 mt-1"></i>
                     <span>
-                        Born in Ferros (MG), Diego began his programming journey in high school, developing algorithms to solve mathematical problems and practicing computational logic from an early age.
+                        Born in Ferros (MG), Diego began his programming journey in high school, developing algorithms
+                        to solve mathematical problems and practicing computational logic from an early age.
                     </span>
                 </p>
                 <p class="flex gap-4">
                     <i class="fas fa-cogs text-sky-600 mt-1"></i>
                     <span>
-                        Working in the industrial automation field, he focuses on backend development, system stability, clean architecture, and continuous performance improvement.
+                        Working in the industrial automation field, he focuses on backend development, system stability,
+                        clean architecture, and continuous performance improvement.
                     </span>
                 </p>
                 <p class="flex gap-4">
                     <i class="fas fa-database text-sky-600 mt-1"></i>
                     <span>
-                        He currently contributes to <strong>industrial historian</strong> systems by creating robust, scalable, and reliable solutions for real industrial environments.
+                        He currently contributes to <strong>industrial historian</strong> systems by creating robust,
+                        scalable, and reliable solutions for real industrial environments.
                     </span>
                 </p>
             </div>
@@ -274,26 +370,27 @@
         <div class="section-divider"></div>
 
         <!-- CAREER / EXPERIENCE -->
-        <section id="career" class="py-24 opacity-0">
+        <section id="career" class="py-16 md:py-24 opacity-0">
 
-            <div class="flex items-center gap-4 mb-16">
+            <div class="flex items-center gap-4 mb-12 md:mb-16">
                 <i class="fas fa-briefcase text-3xl text-sky-600"></i>
-                <h2 class="text-4xl font-light">Career</h2>
+                <h2 class="text-3xl md:text-4xl font-light section-title">Career</h2>
             </div>
 
-            <div class="space-y-16">
+            <div class="space-y-12 md:space-y-16">
 
                 <!-- EXPERIENCE -->
                 <div>
-                    <h3 class="text-2xl font-medium text-gray-900 mb-8 flex items-center gap-3">
+                    <h3 class="text-xl md:text-2xl font-medium text-gray-900 mb-6 md:mb-8 flex items-center gap-3">
                         <i class="fas fa-building text-sky-600"></i>
                         Professional Experience
                     </h3>
 
-                    <div class="rounded-3xl p-8 shadow-lg border border-gray-100 bg-white card-hover">
+                    <div
+                        class="rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg border border-gray-100 bg-white card-hover">
                         <div class="flex justify-between items-start mb-4 flex-wrap gap-4">
                             <div>
-                                <h4 class="text-xl font-medium text-gray-900 flex items-center gap-3">
+                                <h4 class="text-lg md:text-xl font-medium text-gray-900 flex items-center gap-3">
                                     <i class="fas fa-code-branch text-sky-600"></i>
                                     Full Stack Developer
                                 </h4>
@@ -302,14 +399,17 @@
                                     Industrial Automation
                                 </p>
                             </div>
-                            <span class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                            <span
+                                class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                                 <i class="fas fa-circle text-xs"></i>
                                 Current
                             </span>
                         </div>
 
                         <p class="text-gray-700 leading-relaxed">
-                            Development of systems for the management and analysis of industrial data, focusing on performance, scalability, and reliability. Creation of clean architectures, robust APIs, and high-availability data flows.
+                            Development of systems for the management and analysis of industrial data, focusing on
+                            performance, scalability, and reliability. Creation of clean architectures, robust APIs, and
+                            high-availability data flows.
                         </p>
 
                         <!-- Tech stack badges -->
@@ -332,7 +432,7 @@
 
                 <!-- EDUCATION -->
                 <div>
-                    <h3 class="text-2xl font-medium text-gray-900 mb-8 flex items-center gap-3">
+                    <h3 class="text-xl md:text-2xl font-medium text-gray-900 mb-6 md:mb-8 flex items-center gap-3">
                         <i class="fas fa-graduation-cap text-sky-600"></i>
                         Education
                     </h3>
@@ -341,11 +441,13 @@
 
                         <div class="rounded-2xl p-6 shadow-md border border-gray-100 bg-white card-hover">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-laptop-code text-sky-600"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-medium text-gray-900">Systems Analysis and Development</h4>
+                                    <h4 class="text-lg md:text-xl font-medium text-gray-900">Systems Analysis and
+                                        Development</h4>
                                     <p class="text-gray-600 flex items-center gap-2 mt-1">
                                         <i class="fas fa-university text-sm"></i>
                                         PUC Minas
@@ -356,11 +458,13 @@
 
                         <div class="rounded-2xl p-6 shadow-md border border-gray-100 bg-white card-hover">
                             <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-shield-alt text-sky-600"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-medium text-gray-900">Cybersecurity and Data Governance</h4>
+                                    <h4 class="text-lg md:text-xl font-medium text-gray-900">Cybersecurity and Data
+                                        Governance</h4>
                                     <p class="text-gray-600 flex items-center gap-2 mt-1">
                                         <i class="fas fa-university text-sm"></i>
                                         PUC Minas
@@ -378,19 +482,19 @@
         <div class="section-divider"></div>
 
         <!-- RESULTS -->
-        <section id="results" class="py-24 opacity-0">
-            <div class="flex items-center gap-4 mb-16">
+        <section id="results" class="py-16 md:py-24 opacity-0">
+            <div class="flex items-center gap-4 mb-12 md:mb-16">
                 <i class="fas fa-chart-line text-3xl text-sky-600"></i>
-                <h2 class="text-4xl font-light">Results & Impact</h2>
+                <h2 class="text-3xl md:text-4xl font-light section-title">Results & Impact</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 card-grid">
 
-                <div class="p-8 rounded-3xl shadow-lg bg-white border border-gray-100 card-hover">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center mb-6">
-                        <i class="fas fa-tachometer-alt text-2xl text-sky-600"></i>
+                <div class="p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-lg bg-white border border-gray-100 card-hover">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-sky-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-tachometer-alt text-xl md:text-2xl text-sky-600"></i>
                     </div>
-                    <h3 class="text-xl font-medium mb-4 text-gray-900">Performance Optimization</h3>
+                    <h3 class="text-lg md:text-xl font-medium mb-4 text-gray-900">Performance Optimization</h3>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         Reduced industrial data processing time by 40%, increasing operational efficiency.
                     </p>
@@ -400,11 +504,11 @@
                     </div>
                 </div>
 
-                <div class="p-8 rounded-3xl shadow-lg bg-white border border-gray-100 card-hover">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center mb-6">
-                        <i class="fas fa-expand-arrows-alt text-2xl text-sky-600"></i>
+                <div class="p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-lg bg-white border border-gray-100 card-hover">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-sky-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-expand-arrows-alt text-xl md:text-2xl text-sky-600"></i>
                     </div>
-                    <h3 class="text-xl font-medium mb-4 text-gray-900">Scalable Architecture</h3>
+                    <h3 class="text-lg md:text-xl font-medium mb-4 text-gray-900">Scalable Architecture</h3>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         Implemented a backend capable of handling 3× more simultaneous requests.
                     </p>
@@ -414,11 +518,11 @@
                     </div>
                 </div>
 
-                <div class="p-8 rounded-3xl shadow-lg bg-white border border-gray-100 card-hover">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center mb-6">
-                        <i class="fas fa-check-double text-2xl text-sky-600"></i>
+                <div class="p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-lg bg-white border border-gray-100 card-hover">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-sky-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-check-double text-xl md:text-2xl text-sky-600"></i>
                     </div>
-                    <h3 class="text-xl font-medium mb-4 text-gray-900">Code Quality</h3>
+                    <h3 class="text-lg md:text-xl font-medium mb-4 text-gray-900">Code Quality</h3>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         Adoption of tests and review workflows reduced bugs by over 60%.
                     </p>
@@ -428,11 +532,11 @@
                     </div>
                 </div>
 
-                <div class="p-8 rounded-3xl shadow-lg bg-white border border-gray-100 card-hover">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-pie text-2xl text-sky-600"></i>
+                <div class="p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-lg bg-white border border-gray-100 card-hover">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-sky-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-pie text-xl md:text-2xl text-sky-600"></i>
                     </div>
-                    <h3 class="text-xl font-medium mb-4 text-gray-900">Smart Dashboards</h3>
+                    <h3 class="text-lg md:text-xl font-medium mb-4 text-gray-900">Smart Dashboards</h3>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         Developed interfaces that reduced engineers' analysis time by 50%.
                     </p>
@@ -448,21 +552,22 @@
         <div class="section-divider"></div>
 
         <!-- CONTACT -->
-        <section id="contact" class="py-24 opacity-0">
+        <section id="contact" class="py-16 md:py-24 opacity-0">
             <div class="flex items-center gap-4 mb-12">
                 <i class="fas fa-envelope text-3xl text-sky-600"></i>
-                <h2 class="text-4xl font-light">Contact</h2>
+                <h2 class="text-3xl md:text-4xl font-light section-title">Contact</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8 contact-grid">
+
                 <!-- Contact info -->
                 <div class="space-y-6">
-                    
+
                     <a href="https://www.linkedin.com/in/diego-soareslskv" target="_blank"
-                       class="flex items-center gap-4 p-6 rounded-2xl bg-white border border-gray-100 shadow-md card-hover group">
-                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 icon-pulse">
-                            <i class="fab fa-linkedin-in text-xl text-blue-600"></i>
+                        class="flex items-center gap-4 p-4 md:p-6 rounded-2xl bg-white border border-gray-100 shadow-md card-hover group">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 icon-pulse">
+                            <i class="fab fa-linkedin-in text-lg md:text-xl text-blue-600"></i>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 mb-1">LinkedIn</p>
@@ -470,13 +575,15 @@
                                 diego-soareslskv
                             </p>
                         </div>
-                        <i class="fas fa-external-link-alt ml-auto text-gray-400 group-hover:text-sky-600 transition-colors"></i>
+                        <i
+                            class="fas fa-external-link-alt ml-auto text-gray-400 group-hover:text-sky-600 transition-colors"></i>
                     </a>
 
                     <a href="https://instagram.com/soares.dieguito" target="_blank"
-                       class="flex items-center gap-4 p-6 rounded-2xl bg-white border border-gray-100 shadow-md card-hover group">
-                        <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0 icon-pulse">
-                            <i class="fab fa-instagram text-xl text-pink-600"></i>
+                        class="flex items-center gap-4 p-4 md:p-6 rounded-2xl bg-white border border-gray-100 shadow-md card-hover group">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0 icon-pulse">
+                            <i class="fab fa-instagram text-lg md:text-xl text-pink-600"></i>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 mb-1">Instagram</p>
@@ -484,14 +591,16 @@
                                 @soares.dieguito
                             </p>
                         </div>
-                        <i class="fas fa-external-link-alt ml-auto text-gray-400 group-hover:text-sky-600 transition-colors"></i>
+                        <i
+                            class="fas fa-external-link-alt ml-auto text-gray-400 group-hover:text-sky-600 transition-colors"></i>
                     </a>
 
-                    <a href="https://wa.me/5531995167343" 
-                       class="flex items-center gap-4 p-6 rounded-2xl bg-white border border-gray-100 shadow-md card-hover group"
-                       target="_blank">
-                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 icon-pulse">
-                            <i class="fab fa-whatsapp text-xl text-green-600"></i>
+                    <a href="https://wa.me/5531995167343"
+                        class="flex items-center gap-4 p-4 md:p-6 rounded-2xl bg-white border border-gray-100 shadow-md card-hover group"
+                        target="_blank">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 icon-pulse">
+                            <i class="fab fa-whatsapp text-lg md:text-xl text-green-600"></i>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 mb-1">WhatsApp</p>
@@ -499,17 +608,19 @@
                                 +55 (31) 99516-7343
                             </p>
                         </div>
-                        <i class="fas fa-external-link-alt ml-auto text-gray-400 group-hover:text-sky-600 transition-colors"></i>
+                        <i
+                            class="fas fa-external-link-alt ml-auto text-gray-400 group-hover:text-sky-600 transition-colors"></i>
                     </a>
 
                 </div>
 
                 <!-- CTA Box -->
-                <div class="rounded-3xl bg-gradient-to-br from-sky-600 to-sky-700 p-8 shadow-xl text-white">
-                    <i class="fas fa-paper-plane text-4xl mb-6"></i>
-                    <h3 class="text-2xl font-medium mb-4">Let's Work Together</h3>
+                <div
+                    class="rounded-2xl md:rounded-3xl bg-gradient-to-br from-sky-600 to-sky-700 p-6 md:p-8 shadow-xl text-white">
+                    <i class="fas fa-paper-plane text-3xl md:text-4xl mb-6"></i>
+                    <h3 class="text-xl md:text-2xl font-medium mb-4">Let's Work Together</h3>
                     <p class="text-sky-100 mb-6 leading-relaxed">
-                        I'm always interested in hearing about new projects and opportunities. 
+                        I'm always interested in hearing about new projects and opportunities.
                         Feel free to reach out through any of the channels.
                     </p>
                     <div class="flex flex-wrap gap-3">
@@ -530,7 +641,8 @@
 
     </main>
 
-    <button id="scrollTop" class="fixed bottom-8 right-8 w-12 h-12 bg-sky-600 text-white rounded-full shadow-lg hover:bg-sky-700 transition-all duration-300 opacity-0 pointer-events-none">
+    <button id="scrollTop"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-sky-600 text-white rounded-full shadow-lg hover:bg-sky-700 transition-all duration-300 opacity-0 pointer-events-none">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -560,7 +672,7 @@
 
         // Scroll to top button
         const scrollTopBtn = document.getElementById('scrollTop');
-        
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
                 scrollTopBtn.style.opacity = '1';
@@ -605,4 +717,5 @@
     </script>
 
 </body>
+
 </html>
